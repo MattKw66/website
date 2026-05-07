@@ -55,6 +55,8 @@ const TRANSLATIONS = {
     /* ── EVENTS ── */
     events_title:       "Upcoming Events",
     events_subtitle:    "2025 — 2026 Season",
+    events_upcoming:    "Upcoming",
+    events_past:        "Past",
     event_page_link:    "Event page ↗",
     role_label:         "Role",
     concert_label:      "Tenor solo · Concert",
@@ -123,6 +125,8 @@ const TRANSLATIONS = {
     /* ── EVENTS ── */
     events_title:    "Agenda",
     events_subtitle: "Saison 2025 — 2026",
+    events_upcoming: "À venir",
+    events_past:     "Passés",
     event_page_link: "Page de l'événement ↗",
     role_label:      "Rôle",
     concert_label:   "Solo de ténor · Concert",
@@ -191,6 +195,8 @@ const TRANSLATIONS = {
     /* ── EVENTS ── */
     events_title:    "Kalendarz",
     events_subtitle: "Sezon 2025 — 2026",
+    events_upcoming: "Nadchodzące",
+    events_past:     "Minione",
     event_page_link: "Strona wydarzenia ↗",
     role_label:      "Rola",
     concert_label:   "Partia tenorowa · Koncert",
