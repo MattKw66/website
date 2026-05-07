@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press — Maciej Kwaśnikowski, Tenor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mobile.css" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { font-size: 18px; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: #0e0e0e;
+    color: #f0ece4;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: #f0ece4;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active { color: #f0ece4; }
+
+  .lang {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .lang span {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #444;
+    cursor: pointer;
+  }
+
+  .lang span.active {
+    color: #c9b99a;
+    border-bottom: 1px solid #c9b99a;
+  }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 4rem 3rem 2.5rem;
+    border-bottom: 1px solid #1e1e1e;
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+  }
+
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: #f0ece4;
+    letter-spacing: 0.02em;
+  }
+
+  .page-subtitle {
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #444;
+  }
+
+  /* MAIN CONTENT */
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    width: 100%;
+  }
+
+  /* PRODUCTION BLOCK */
+  .production {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid #161616;
+  }
+
+  .production-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 2rem;
+    align-items: baseline;
+    margin-bottom: 2.5rem;
+  }
+
+  .production-opera {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #f0ece4;
+  }
+
+  .production-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .production-role {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c9b99a;
+  }
+
+  .production-detail {
+    font-size: 0.72rem;
+    color: #444;
+    letter-spacing: 0.04em;
+  }
+
+  /* REVIEWS GRID */
+  .reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .reviews.single {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .review {
+    border-left: 1px solid #1e1e1e;
+    padding-left: 1.5rem;
+  }
+
+  .review-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #aaa;
+    margin-bottom: 1rem;
+  }
+
+  .review-quote::before {
+    content: '\201C';
+    color: #c9b99a;
+    font-size: 1.4rem;
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin-right: 0.1em;
+  }
+
+  .review-quote::after {
+    content: '\201D';
+    color: #c9b99a;
+    font-size: 1.4rem;
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin-left: 0.1em;
+  }
+
+  .review-source {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .review-author {
+    font-size: 0.7rem;
+    color: #555;
+    letter-spacing: 0.04em;
+  }
+
+  .review-publication {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+
+  .review-publication a {
+    color: #c9b99a;
+    text-decoration: none;
+    border-bottom: 1px solid #c9b99a33;
+    transition: border-color 0.2s;
+  }
+
+  .review-publication a:hover {
+    border-color: #c9b99a;
+  }
+
+  /* language flag for non-english reviews */
+  .review-lang {
+    display: inline-block;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #333;
+    border: 1px solid #2a2a2a;
+    padding: 0.1rem 0.4rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  /* FOOTER — social links */
+  footer {
+    border-top: 1px solid #1a1a1a;
+    padding: 1.8rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  footer p {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+  }
+
+  .footer-social a {
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-social a:hover { color: #c9b99a; }
+
+  .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+  .footer-social .operabase-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Maciej Kwaśnikowski</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+    <li><a href="about.html" data-i18n="nav_about">About</a></li>
+    <li><a href="events.html" data-i18n="nav_events">Events</a></li>
+    <li><a href="recordings.html" data-i18n="nav_recordings">Recordings</a></li>
+    <li><a href="press.html" class="active" data-i18n="nav_press">Press</a></li>
+    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="lang">
+    <span class="active">EN</span>
+    <span>FR</span>
+    <span>PL</span>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1 class="page-title" data-i18n="press_title">Press</h1>
+  <p class="page-subtitle" data-i18n="press_subtitle">Selected reviews</p>
+</div>
+
+<main>
+
+  <!-- JULIETTA -->
+  <div class="production">
+    <div class="production-header">
+      <div class="production-meta">
+        <span class="production-role">Role: Michel</span>
+        <span class="production-detail">Wrocław Opera · Apr–May 2026</span>
+      </div>
+    </div>
+    <h2 class="production-opera" style="margin-bottom:2rem;">Julietta — Bohuslav Martinů</h2>
+    <div class="reviews">
+      <div class="review">
+        <p class="review-quote">At the core, tenor Maciej Kwaśnikowski was present almost continuously on stage, shaping the role of Michel with lyrical clarity and a quiet sense of existential drift.</p>
+        <div class="review-source">
+          <span class="review-publication"><a href="https://operawire.com/wroclaw-opera-2025-26-review-juliette-the-key-to-dreams/" target="_blank">Operawire</a></span>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review-quote">Wszechobecny na scenie Maciej Kwaśnikowski stworzył postać zagubionego bohatera, operując lirycznym tenorem nawet tam, gdzie partia wymagała większej siły.</p>
+        <div class="review-source">
+          <span class="review-publication"><a href="https://orfeo.com.pl/czy-to-jawa-czy-sen/" target="_blank">Orfeo</a> <span class="review-lang">PL</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE MAGIC FLUTE -->
+  <div class="production">
+    <div class="production-header">
+      <div class="production-meta">
+        <span class="production-role">Role: Tamino</span>
+        <span class="production-detail">Opéra de Tours · Feb–Mar 2025</span>
+      </div>
+    </div>
+    <h2 class="production-opera" style="margin-bottom:2rem;">Die Zauberflöte — W. A. Mozart</h2>
+    <div class="reviews">
+      <div class="review">
+        <p class="review-quote">Maciej Kwaśnikowski's Tamino is also luminous. He is pure, innocent and courageous, with an appropriate stage performance, and a Mozartian tenor voice with clear and youthful tones, but valiant and virile, all brushed by a large palette of colors and nuances according to the situation.</p>
+        <div class="review-source">
+          <span class="review-author">Joël Heuillon</span>
+          <span class="review-publication"><a href="https://www.olyrix.com/articles/production/8127/la-flute-enchantee-mozart-opera-tours-28-fevrier-2025-article-critique-compte-rendu-cafiero-vigie-kwasnikowski-mendoche-petit-saint-martin-segol-lamaison-lopez-blondel-jobic-gautrot-toulouse-magnin-orchestre-symphonique-region-centre-val-loire" target="_blank">Ôlyrix</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review-quote">The couple of lovers is as youthful as they are ardent: the light lyrical tenor of Maciej Kwaśnikowski, with a beautiful clear timbre and high vocal placement, works wonders as Tamino.</p>
+        <div class="review-source">
+          <span class="review-author">Thierry Guyenne</span>
+          <span class="review-publication"><a href="https://operamag.com/exclusif-abonnes/die-zauberflote-a-tours/" target="_blank">Opéra Magazine</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIE SCHÖPFUNG -->
+  <div class="production">
+    <div class="production-header">
+      <div class="production-meta">
+        <span class="production-role">Role: Uriel</span>
+        <span class="production-detail">Opéra de Montpellier · Nov 2024</span>
+      </div>
+    </div>
+    <h2 class="production-opera" style="margin-bottom:2rem;">Die Schöpfung — Joseph Haydn</h2>
+    <div class="reviews">
+      <div class="review">
+        <p class="review-quote">His naturally powerful and light voice in the middle and upper registers allows him to easily dominate the space with a brilliant timbre.</p>
+        <div class="review-source">
+          <span class="review-author">Moisés Ordóñez Alarcón</span>
+          <span class="review-publication"><a href="https://www.olyrix.com/articles/production/7946/la-creation-joseph-haydn-opera-orchestre-national-montpellier-occitanie-comedie-16-novembre-2024-article-critique-compte-rendu-die-schoepfung-oratorio-marco-crispo-emy-gazeilles-maciej-kwasnikowski-alexandre-baldo-dominika-gajdzis-noelle-geny-choeur" target="_blank">Ôlyrix</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review-quote">His constant care for the text — always intelligible — and the vocal line, combined with exemplary means, gives us constant pleasure. The timbre, the projection are there, in service of a natural expression, such as one loves.</p>
+        <div class="review-source">
+          <span class="review-author">Yvan Beuvard</span>
+          <span class="review-publication"><a href="https://www.forumopera.com/spectacle/haydn-die-schopfung-montpellier/" target="_blank">Forum Opéra</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROMÉO ET JULIETTE -->
+  <div class="production">
+    <div class="production-header">
+      <div class="production-meta">
+        <span class="production-role">Role: Tybalt</span>
+        <span class="production-detail">Opéra Bastille · Jun–Jul 2023</span>
+      </div>
+    </div>
+    <h2 class="production-opera" style="margin-bottom:2rem;">Roméo et Juliette — Charles Gounod</h2>
+    <div class="reviews">
+      <div class="review">
+        <p class="review-quote">Maciej Kwaśnikowski offers Tybalt with his vibrant high notes, deploying with his phrasing and vocal placement an intensity which suddenly rises — and never comes down again — with his anger.</p>
+        <div class="review-source">
+          <span class="review-author">Charles Arden</span>
+          <span class="review-publication"><a href="https://www.olyrix.com/articles/production/6875/romeo-et-juliette-gounod-opera-paris-bastille-17-juin-2023-article-critique-compte-rendu-shakespeare-thomas-jolly-rizzi-wu-lavenere-dequest-dreisig-bernheim-teitgen-naouri-desandre-grupposo-rendall-ricart-kwasnikowski-galvain-ioannou-boutillier-orchestre" target="_blank">Ôlyrix</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review-quote">Maciej Kwaśnikowski is an arrogant and unyielding Tybalt, his sonorous and well-projected voice hits the mark in the duel scene.</p>
+        <div class="review-source">
+          <span class="review-author">Christian Peter</span>
+          <span class="review-publication"><a href="https://www.forumopera.com/spectacle/gounod-romeo-et-juliette-paris-bastille/" target="_blank">Forum Opéra</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review-quote">Maciej Kwaśnikowski and Huw Montague Rendall compete in elegance, accuracy in diction and feeling and youthful brilliance.</p>
+        <div class="review-source">
+          <span class="review-author">Emmanuel Dupuy</span>
+          <span class="review-publication"><a href="https://www.diapasonmag.fr/critiques/a-lopera-bastille-la-tenebreuse-clarte-de-romeo-et-juliette-38419.html#item=1" target="_blank">Diapason</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review-quote">Special mention to Tybalt by Maciej Kwaśnikowski, absolutely excellent and to whom one would better entrust more important roles from now on.</p>
+        <div class="review-source">
+          <span class="review-author">Stéphane Lelièvre</span>
+          <span class="review-publication"><a href="https://bachtrack.com/critique-gounod-romeo-et-juliette-rizzi-jolly-dreisig-bernheim-opera-bastille-juin-2023" target="_blank">Bachtrack</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRISTAN UND ISOLDE -->
+  <div class="production">
+    <div class="production-header">
+      <div class="production-meta">
+        <span class="production-role">Young Sailor · Shepherd</span>
+        <span class="production-detail">Opéra Bastille · Jan–Feb 2023</span>
+      </div>
+    </div>
+    <h2 class="production-opera" style="margin-bottom:2rem;">Tristan und Isolde — Richard Wagner</h2>
+    <div class="reviews">
+      <div class="review">
+        <p class="review-quote">Maciej Kwaśnikowski offers two very distinct characters, using all his amplitude and darkness of timbre in phrases of the Young Sailor who opens the opera, while the youthful freshness of his Shepherd seduces with his carefree and tender tone.</p>
+        <div class="review-source">
+          <span class="review-author">Philippe Scagni</span>
+          <span class="review-publication"><a href="https://www.olyrix.com/articles/production/6453/tristan-et-isolde-opera-paris-bastille-wagner-17-janvier-2023-article-critique-compte-rendu-gustavo-dudamel-peter-sellars-bill-viola-pakledinaz-ingalls-stefano-williams-weinius-damerau-green-owens-cooper-kwasnikowski-kumiega-mills-rhoden-hay-steben" target="_blank">Ôlyrix</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review-quote">Everything starts very well with the intervention of Maciej Kwaśnikowski, who shows himself as the Sailor and then as the Shepherd in the last act, ideal with his freshness, clarity and bearing.</p>
+        <div class="review-source">
+          <span class="review-author">Stéphane Lelièvre</span>
+          <span class="review-publication"><a href="https://www.premiereloge-opera.com/article/2023/01/17/tristan-et-isolde-opera-de-paris-bastille-critique-mary-elizabeth-williams-michael-weinius-okka-von-der-damerau-eric-owens-gustavo-dudamel-peter-sellars/" target="_blank">Première Loge</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COSÌ FAN TUTTE -->
+  <div class="production">
+    <div class="production-header">
+      <div class="production-meta">
+        <span class="production-role">Role: Ferrando</span>
+        <span class="production-detail">Dijon Opera · Feb 2022</span>
+      </div>
+    </div>
+    <h2 class="production-opera" style="margin-bottom:2rem;">Così fan tutte — W. A. Mozart</h2>
+    <div class="reviews">
+      <div class="review">
+        <p class="review-quote">Maciej Kwaśnikowski embodies a Ferrando close to the ideal, both manly and fragile when confronted with his fiancée's infidelity. This duality is found in the beautiful timbre of his voice and transpires in the aria Un'aura amorosa delivered on the breath, without superfluous artifice.</p>
+        <div class="review-source">
+          <span class="review-author">Nicolas Le Clerre</span>
+          <span class="review-publication"><a href="https://www.premiereloge-opera.com/article/compte-rendu/production/2022/02/10/cosi-fan-tutte-dijon-mozart-andreea-soare-fiona-mc-gown-andrea-hill-maciej-kwasnikowski-timothee-varon-david-bizic-guillaume-tourniaire-dominique-pitoiset/" target="_blank">Première Loge</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review-quote">His Un'aura amorosa is a moment of grace.</p>
+        <div class="review-source">
+          <span class="review-author">Yvan Beuvard</span>
+          <span class="review-publication"><a href="https://www.forumopera.com/spectacle/cosi-fan-tutte-dijon-nous-nentendons-ni-la-meme-musique-ni-le-meme-texte/" target="_blank">Forum Opéra</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review-quote">Polish tenor Maciej Kwaśnikowski is a Ferrando full of lightness and candor, with a suave vocal expression. His brilliance becomes an expressive force in touching Un'aura amorosa.</p>
+        <div class="review-source">
+          <span class="review-author">Pierre Géraudie</span>
+          <span class="review-publication"><a href="https://www.olyrix.com/articles/production/5460/cosi-fan-tutte-mozart-nouvelle-production-opera-dijon-ponte-tourniaire-gallon-orchestre-bourgogne-ismat-prosperi-dominique-pitoiset-christophe-fabrizio-kretschmar-pansard-besson-penager-soare-gown-hill-kwasnikowski-varon-bizic-6-fevrier-2022-auditorium" target="_blank">Ôlyrix</a> <span class="review-lang">FR</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p data-i18n="footer_copyright">© Maciej Kwaśnikowski 2026</p>
+  <nav class="footer-social" aria-label="Social media">
+    <a href="https://www.facebook.com/profile.php?id=61570806491326" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 1 0-11.563 9.878v-6.99H7.898V12h2.539V9.797c0-2.506 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.563V12h2.773l-.443 2.888h-2.33v6.99A10.003 10.003 0 0 0 22 12Z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/maciejkwasnikowski/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.415a4.49 4.49 0 0 1 1.675 1.089 4.49 4.49 0 0 1 1.089 1.675c.166.422.361 1.057.415 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.415 2.227a4.49 4.49 0 0 1-1.089 1.675 4.49 4.49 0 0 1-1.675 1.089c-.422.166-1.057.361-2.227.415-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.415a4.49 4.49 0 0 1-1.675-1.089 4.49 4.49 0 0 1-1.089-1.675c-.166-.422-.361-1.057-.415-2.227C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.249-1.805.415-2.227a4.49 4.49 0 0 1 1.089-1.675 4.49 4.49 0 0 1 1.675-1.089c.422-.166 1.057-.361 2.227-.415C8.416 2.175 8.796 2.163 12 2.163Zm0 1.802c-3.146 0-3.52.011-4.769.068-1.086.05-1.674.23-2.065.384a2.69 2.69 0 0 0-.997.649 2.69 2.69 0 0 0-.649.997c-.154.391-.335.979-.384 2.065-.057 1.249-.068 1.623-.068 4.769s.011 3.52.068 4.769c.05 1.086.23 1.674.384 2.065.18.46.423.85.649.997a2.69 2.69 0 0 0 .997.649c.391.154.979.335 2.065.384 1.249.057 1.623.068 4.769.068s3.52-.011 4.769-.068c1.086-.05 1.674-.23 2.065-.384a2.69 2.69 0 0 0 .997-.649 2.69 2.69 0 0 0 .649-.997c.154-.391.335-.979.384-2.065.057-1.249.068-1.623.068-4.769s-.011-3.52-.068-4.769c-.05-1.086-.23-1.674-.384-2.065a2.69 2.69 0 0 0-.649-.997 2.69 2.69 0 0 0-.997-.649c-.391-.154-.979-.335-2.065-.384C15.52 3.976 15.146 3.965 12 3.965Zm0 3.07a4.965 4.965 0 1 1 0 9.93 4.965 4.965 0 0 1 0-9.93Zm0 1.802a3.163 3.163 0 1 0 0 6.326 3.163 3.163 0 0 0 0-6.326Zm5.338-3.205a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@maciejkwasnikowski3333" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg>
+    </a>
+    <a href="https://www.operabase.com/maciej-kwasnikowski-a72373/en" target="_blank" rel="noopener" aria-label="Operabase profile" class="operabase-link">Operabase</a>
+  </nav>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links  = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+<script src="translations.js"></script>
+<script src="lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Maciej Kwaśnikowski, Tenor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mobile.css" />
+<style>
+  :root {
+    --bg:     #0e0e0e;
+    --gold:   #c9b99a;
+    --text:   #f0ece4;
+    --muted:  #555;
+    --border: #1e1e1e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { font-size: 18px; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: #0e0e0e;
+    color: #f0ece4;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: #f0ece4;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active { color: #f0ece4; }
+
+  .lang {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .lang span {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #444;
+    cursor: pointer;
+  }
+
+  .lang span.active {
+    color: #c9b99a;
+    border-bottom: 1px solid #c9b99a;
+  }
+
+  /* HERO — photo full width, name overlaid */
+  .about-hero {
+    position: relative;
+    height: 55vh;
+    overflow: hidden;
+  }
+
+  .about-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    display: block;
+    filter: brightness(0.6);
+  }
+
+  .about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, #0e0e0e 100%);
+  }
+
+  .about-hero-text {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 3rem;
+  }
+
+  .about-hero-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #f0ece4;
+    line-height: 1.05;
+  }
+
+  .about-hero-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #c9b99a;
+    margin-top: 0.3rem;
+  }
+
+  /* PHOTO CREDIT */
+  .photo-credit {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: #333;
+    text-align: right;
+    padding: 0.6rem 3rem;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  /* CONTENT */
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 4rem 3rem;
+  }
+
+  /* LEFT COLUMN — quick facts */
+  .about-sidebar {
+    padding-right: 4rem;
+    border-right: 1px solid #1a1a1a;
+  }
+
+  .sidebar-section {
+    margin-bottom: 3rem;
+  }
+
+  .sidebar-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #888;
+    line-height: 2;
+  }
+
+  .sidebar-item strong {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #f0ece4;
+    letter-spacing: 0.04em;
+  }
+
+  .sidebar-gold {
+    font-size: 0.72rem;
+    color: #c9b99a;
+    letter-spacing: 0.04em;
+    line-height: 2;
+  }
+
+  /* RIGHT COLUMN — bio */
+  .about-bio {
+    padding-left: 4rem;
+  }
+
+  .bio-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #c9b99a;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+  }
+
+  .bio-body p {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: #777;
+    margin-bottom: 1.5rem;
+  }
+
+  .bio-body p em {
+    color: #999;
+    font-style: normal;
+  }
+
+  /* highlight key names/places */
+  .bio-body p strong {
+    color: #aaa;
+    font-weight: 400;
+  }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.8rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+footer p {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+.footer-social a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.footer-social a:hover { color: var(--gold); }
+.footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+.footer-social .operabase-link {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Maciej Kwaśnikowski</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+    <li><a href="about.html" class="active" data-i18n="nav_about">About</a></li>
+    <li><a href="events.html" data-i18n="nav_events">Events</a></li>
+    <li><a href="recordings.html" data-i18n="nav_recordings">Recordings</a></li>
+    <li><a href="press.html" data-i18n="nav_press">Press</a></li>
+    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="lang">
+    <span class="active">EN</span>
+    <span>FR</span>
+    <span>PL</span>
+  </div>
+</nav>
+
+<div class="about-hero">
+  <img src="photo-about.jpg" alt="Maciej Kwaśnikowski at the Palais Garnier" />
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-text">
+    <h1>Maciej Kwaśnikowski</h1>
+    <p data-i18n="about_hero_subtitle">Polish tenor</p>
+  </div>
+</div>
+
+<p class="photo-credit" data-i18n="photo_credit">© Julien Benhamou / l'AROP — with Benjamin d'Anfray at the Palais Garnier</p>
+
+<div class="about-content">
+
+  <aside class="about-sidebar">
+
+    <div class="sidebar-section">
+      <p class="sidebar-label" data-i18n="sidebar_voice">Voice</p>
+      <p class="sidebar-gold" data-i18n="sidebar_voice_val">Lyric tenor</p>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-label" data-i18n="sidebar_training">Training</p>
+      <div class="sidebar-item">
+      2019 — 2021
+        <strong>Lindemann Program, Metropolitan Opera</strong>
+      </div>
+      <div class="sidebar-item">
+      2017 — 2019
+       <strong>Académie de l'Opéra de Paris</strong>
+      </div>
+      <div class="sidebar-item">
+      2017
+        <strong>Young Singers Project, Salzburg Festival</strong>
+      </div>
+      <div class="sidebar-item">
+        <strong>Académie du Festival d'Aix-en-Provence</strong>
+      </div>
+      <div class="sidebar-item">
+      2015 — 2017
+        <strong>Warsaw Opera Academy</strong>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-label" data-i18n="sidebar_awards">Awards</p>
+      <div class="sidebar-item">
+        <strong data-i18n="sidebar_award1">Prix Lyrique de l'AROP</strong>
+        <span data-i18n="sidebar_award1_year">2019</span>
+      </div>
+      <div class="sidebar-item">
+        <strong data-i18n="sidebar_award2">Prix Lyrique du Cercle Carpeaux</strong>
+        <span data-i18n="sidebar_award2_year">2018</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-label" data-i18n="sidebar_studies">Studies with</p>
+      <p class="sidebar-gold" data-i18n="sidebar_studies_val">Neil Shicoff</p>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-label" data-i18n="sidebar_also">Also</p>
+      <p class="sidebar-item" style="color:#555; font-size:0.78rem; font-family:'Jost',sans-serif; line-height:1.7;" data-i18n="sidebar_degree">
+        B.Sc. in Engineering Physics<br>
+        Poznań University of Technology, 2017
+      </p>
+    </div>
+
+  </aside>
+
+  <article class="about-bio">
+
+    <p class="bio-intro" data-i18n="bio_intro">
+      "His naturally powerful and light voice in the middle and upper registers allows him to easily dominate the space with a brilliant timbre."
+    </p>
+
+    <div class="bio-body">
+      <p data-i18n="bio_p1">
+        Polish tenor <strong>Maciej Kwaśnikowski</strong> was born in Poznań and started singing at the age of 9 as a boy soprano. He began formal vocal studies with Polish countertenor <strong>Robert Nakoneczny</strong> in 2014, and in 2015 entered the Warsaw Opera Academy at the Polish National Opera, where he worked with Izabela Kłosińska, Eytan Pessen and Matthias Rexroth.
+      </p>
+      <p data-i18n="bio_p2">
+        In 2017, alongside his musical training, he earned a degree in engineering physics from the Poznań University of Technology. That same year he sang the role of Florville in Rossini's <em>Il Signor Bruschino</em> with the Orchestre national d'Île-de-France under <strong>Enrique Mazzola</strong>, and entered the Académie de l'Opéra national de Paris. He was also part of the Young Singers Project of the Salzburger Festspiele and the Académie du Festival d'Aix-en-Provence.
+      </p>
+      <p data-i18n="bio_p3">
+        During his tenure at the Académie de l'Opéra de Paris he performed as Alfred in <em>Die Fledermaus</em> and as the Young Gentleman in Philippe Boesmans' <em>Reigen</em>. He was awarded the Prix Lyrique du Cercle Carpeaux (2018) and the Prix Lyrique de l'AROP (2019).
+      </p>
+      <p data-i18n="bio_p4">
+        In 2019 he joined the prestigious <strong>Lindemann Program at the Metropolitan Opera</strong>. His MET debut as Young Sailor in Wagner's <em>Tristan und Isolde</em>, alongside other engagements, was cancelled due to the COVID-19 pandemic.
+      </p>
+      <p data-i18n="bio_p5">
+        He has performed tenor solos in major oratorio works by Bach, Handel and Mozart, and notably in Schubert's Mass in E-flat Major with the <strong>Wiener Philharmoniker</strong> at the Salzburg Festival (2018) and with the <strong>Symphonieorchester des Bayerischen Rundfunks</strong> in Munich (2019), both under <strong>Riccardo Muti</strong>. A frequent guest at the Salzburg Festival, he sang the Schubert Mass again in 2022 with Camerata Salzburg under <strong>Franz Welser-Möst</strong>, and performed Mozart's Coronation Mass with Mozarteum Orchestra under <strong>Roberto González-Monjas</strong> in 2023. In 2024 he added Haydn's <em>The Creation</em> to his repertoire at the Montpellier Opera.
+      </p>
+      <p data-i18n="bio_p6">
+        Since the 2021/2022 season Maciej has appeared in numerous productions of the <strong>Paris Opera</strong>, notably as Tybalt in a new production of Gounod's <em>Roméo et Juliette</em> conducted by Carlo Rizzi, and as Young Sailor and Shepherd in Peter Sellars' production of Wagner's <em>Tristan und Isolde</em> conducted by <strong>Gustavo Dudamel</strong>, always to high critical acclaim. In 2025 he made his role and house debut at the Polish National Opera as Tamino in Mozart's <em>Die Zauberflöte</em>.
+      </p>
+      <p data-i18n="bio_p7">
+        In the 2025/2026 season he sings Beppe in Leoncavallo's <em>Pagliacci</em> and the tenor solo in Mozart's Coronation Mass at the Montpellier Opera, Tybalt in Gounod's <em>Roméo et Juliette</em> at the <strong>Staatsoper Berlin</strong> and <strong>Teatro Real de Madrid</strong>, Narraboth in Strauss' <em>Salome</em> and Michel in Martinů's <em>Julietta</em> at the Wrocław Opera, and Alméric in Tchaikovsky's <em>Iolanta</em> at the Rouen Opera.
+      </p>
+      <p data-i18n="bio_p8">
+        Maciej has been studying voice with <strong>Neil Shicoff</strong> since 2016.
+      </p>
+    </div>
+
+  </article>
+
+</div>
+
+<footer>
+  <p data-i18n="footer_copyright">© Maciej Kwaśnikowski 2026</p>
+  <nav class="footer-social" aria-label="Social media">
+    <a href="https://www.facebook.com/profile.php?id=61570806491326" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 1 0-11.563 9.878v-6.99H7.898V12h2.539V9.797c0-2.506 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.563V12h2.773l-.443 2.888h-2.33v6.99A10.003 10.003 0 0 0 22 12Z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/maciejkwasnikowski/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.415a4.49 4.49 0 0 1 1.675 1.089 4.49 4.49 0 0 1 1.089 1.675c.166.422.361 1.057.415 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.415 2.227a4.49 4.49 0 0 1-1.089 1.675 4.49 4.49 0 0 1-1.675 1.089c-.422.166-1.057.361-2.227.415-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.415a4.49 4.49 0 0 1-1.675-1.089 4.49 4.49 0 0 1-1.089-1.675c-.166-.422-.361-1.057-.415-2.227C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.249-1.805.415-2.227a4.49 4.49 0 0 1 1.089-1.675 4.49 4.49 0 0 1 1.675-1.089c.422-.166 1.057-.361 2.227-.415C8.416 2.175 8.796 2.163 12 2.163Zm0 1.802c-3.146 0-3.52.011-4.769.068-1.086.05-1.674.23-2.065.384a2.69 2.69 0 0 0-.997.649 2.69 2.69 0 0 0-.649.997c-.154.391-.335.979-.384 2.065-.057 1.249-.068 1.623-.068 4.769s.011 3.52.068 4.769c.05 1.086.23 1.674.384 2.065.18.46.423.85.649.997a2.69 2.69 0 0 0 .997.649c.391.154.979.335 2.065.384 1.249.057 1.623.068 4.769.068s3.52-.011 4.769-.068c1.086-.05 1.674-.23 2.065-.384a2.69 2.69 0 0 0 .997-.649 2.69 2.69 0 0 0 .649-.997c.154-.391.335-.979.384-2.065.057-1.249.068-1.623.068-4.769s-.011-3.52-.068-4.769c-.05-1.086-.23-1.674-.384-2.065a2.69 2.69 0 0 0-.649-.997 2.69 2.69 0 0 0-.997-.649c-.391-.154-.979-.335-2.065-.384C15.52 3.976 15.146 3.965 12 3.965Zm0 3.07a4.965 4.965 0 1 1 0 9.93 4.965 4.965 0 0 1 0-9.93Zm0 1.802a3.163 3.163 0 1 0 0 6.326 3.163 3.163 0 0 0 0-6.326Zm5.338-3.205a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@maciejkwasnikowski3333" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg>
+      </a>
+      <a href="https://www.operabase.com/maciej-kwasnikowski-a72373/en" target="_blank" rel="noopener" aria-label="Operabase profile" class="operabase-link">Operabase</a>
+  </nav>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links  = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+<script src="translations.js"></script>
+<script src="lang.js"></script>
+</body>
+</html>

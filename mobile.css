@@ -1,0 +1,313 @@
+/* ============================================================
+   mobile.css — responsive overrides for maciejkwasnikowski.com
+   Link this AFTER your page's <style> block on every page:
+   <link rel="stylesheet" href="mobile.css" />
+   ============================================================ */
+
+/* ── HAMBURGER BUTTON (hidden on desktop) ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 200;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: #c9b99a;
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+
+/* ============================================================
+   TABLET  ≤ 900px
+   ============================================================ */
+@media (max-width: 900px) {
+
+  nav,
+  .page-header,
+  footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .hero-dark,
+  .hero-light {
+    min-height: 70vh;
+  }
+
+  .about-content {
+    padding: 3rem 2rem;
+  }
+
+  .about-sidebar {
+    padding-right: 2.5rem;
+  }
+
+  .about-bio {
+    padding-left: 2.5rem;
+  }
+
+  .events-container {
+    padding: 0 2rem;
+  }
+
+  .page-header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+
+/* ============================================================
+   MOBILE  ≤ 640px
+   ============================================================ */
+@media (max-width: 640px) {
+
+  html { font-size: 16px; }
+
+  /* ── NAV ── */
+  nav {
+    padding: 1.2rem 1.4rem !important;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links,
+  .nav-links-dark,
+  .nav-links-light {
+    display: none !important;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin-top: 0.8rem;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 0.5rem;
+  }
+
+  .nav-links.open,
+  .nav-links-dark.open,
+  .nav-links-light.open {
+    display: flex !important;
+  }
+
+  .nav-links li,
+  .nav-links-dark li,
+  .nav-links-light li {
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .nav-links a,
+  .nav-links-dark a,
+  .nav-links-light a {
+    display: block;
+    padding: 0.75rem 0.2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+
+  /* Hide language switcher on mobile */
+  .lang,
+  .lang-dark,
+  .lang-light {
+    display: none;
+  }
+
+  /* ── GLOBAL PADDING ── */
+  .page-header,
+  footer {
+    padding-left: 1.4rem !important;
+    padding-right: 1.4rem !important;
+  }
+
+  main {
+    padding: 2rem 1.4rem 3.5rem !important;
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding-top: 2.5rem !important;
+    padding-bottom: 1.8rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+
+  .page-header h1,
+  .page-title {
+    font-size: 2.2rem !important;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    padding-top: 1.4rem !important;
+    padding-bottom: 1.4rem !important;
+  }
+
+  /* ── HOMEPAGE ── */
+  .hero-dark,
+  .hero-light {
+    grid-template-columns: 1fr !important;
+    min-height: unset !important;
+  }
+
+  .hero-image-dark,
+  .hero-image-light {
+    height: 55vw !important;
+    min-height: 220px;
+    max-height: 340px;
+  }
+
+  .hero-text-dark,
+  .hero-text-light {
+    padding: 2.5rem 1.4rem !important;
+  }
+
+  .hero-name-dark,
+  .hero-name-light {
+    font-size: 2.8rem !important;
+  }
+
+  .hero-voice-dark,
+  .hero-voice-light {
+    font-size: 1.3rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .hero-bio-dark,
+  .hero-bio-light {
+    margin-bottom: 2rem !important;
+  }
+
+  .nav-dark,
+  .nav-light {
+    padding: 1.2rem 1.4rem !important;
+    flex-wrap: wrap;
+  }
+
+  .footer-dark,
+  .footer-light {
+    padding: 1.4rem !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  /* body grid: don't stretch hero to fill remaining height once stacked */
+  body:has(.hero-dark) {
+    grid-template-rows: auto auto auto;
+  }
+
+  /* hero image gradient should fade downward when image sits above text */
+  .hero-image-dark::after {
+    background: linear-gradient(to bottom, transparent 60%, #0e0e0e) !important;
+  }
+
+  /* subtitle can be long on small screens — allow wrapping, ease tracking */
+  .hero-subtitle-dark {
+    letter-spacing: 0.12em !important;
+    white-space: normal;
+  }
+
+  /* ── ABOUT PAGE ── */
+  .about-content {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    padding: 2rem 1.4rem !important;
+  }
+
+  .about-sidebar {
+    padding-right: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+  }
+
+  .sidebar-section {
+    margin-bottom: 0 !important;
+    min-width: 140px;
+  }
+
+  .about-bio {
+    padding-left: 0 !important;
+  }
+
+  .about-hero {
+    height: 55vw !important;
+    min-height: 200px;
+    max-height: 300px;
+  }
+
+  .about-hero-text h1 {
+    font-size: 2.2rem !important;
+  }
+
+  .about-hero-text {
+    left: 1.4rem !important;
+    bottom: 1.5rem !important;
+  }
+
+  .photo-credit {
+    padding: 0.5rem 1.4rem !important;
+  }
+
+  /* ── EVENTS PAGE ── */
+  /* main already has 1.4rem side padding; zero out inner container padding */
+  .events-container {
+    padding: 0 !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .event {
+    grid-template-columns: 44px 1fr !important;
+    gap: 0 1.2rem !important;
+    padding: 1.5rem 0 !important;
+  }
+
+  .event-dates-right {
+    display: none !important;
+  }
+
+  .event-opera {
+    font-size: 1.3rem !important;
+  }
+
+  .event-venue {
+    font-size: 0.72rem !important;
+  }
+
+  /* ── RECORDINGS PAGE ── */
+  .recordings-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  /* ── CONTACT PAGE ── */
+  .contact-name {
+    font-size: 1.3rem !important;
+  }
+}
