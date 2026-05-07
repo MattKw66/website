@@ -310,4 +310,9 @@
   .contact-name {
     font-size: 1.3rem !important;
   }
+
+  /* ── PRESS PAGE ── */
+  .reviews {
+    grid-template-columns: 1fr !important;
+  }
 }
