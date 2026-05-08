@@ -9,7 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mobile.css" />
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #0e0e0e;
+    --gold:   #c9b99a;
+    --text:   #e8e0d5;
+    --muted:  #7a7060;
+    --border: #2a2520;
+  }
 
   html { font-size: 18px; }
 
@@ -28,10 +36,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.6rem 4rem;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
-    background: #0e0e0e;
+    background: var(--bg);
     z-index: 100;
   }
 
@@ -40,7 +48,7 @@
     font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 0.08em;
-    color: #c9b99a;
+    color: var(--gold);
     text-decoration: none;
     white-space: nowrap;
   }
@@ -57,7 +65,7 @@
     font-weight: 400;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #e8e0d5;
+    color: var(--text);
     text-decoration: none;
     opacity: 0.7;
     transition: opacity 0.2s, color 0.2s;
@@ -66,7 +74,7 @@
   .nav-links a:hover,
   .nav-links a.active {
     opacity: 1;
-    color: #c9b99a;
+    color: var(--gold);
   }
 
   .lang {
@@ -83,8 +91,8 @@
   }
 
   .lang span.active {
-    color: #c9b99a;
-    border-bottom: 1px solid #c9b99a;
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
   }
 
   /* HERO */
@@ -161,7 +169,7 @@
   }
 
   .next-event-dark {
-    border-top: 1px solid #2a2a2a;
+    border-top: 1px solid var(--border);
     padding-top: 2rem;
   }
 
@@ -199,7 +207,7 @@
 
   /* FOOTER */
   footer {
-    border-top: 1px solid #2a2a2a;
+    border-top: 1px solid var(--border);
     padding: 1.8rem 4rem;
     display: flex;
     justify-content: space-between;
@@ -211,7 +219,7 @@
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #7a7060;
+    color: var(--muted);
   }
 
   .footer-social {
@@ -221,14 +229,14 @@
   }
 
   .footer-social a {
-    color: #7a7060;
+    color: var(--muted);
     text-decoration: none;
     transition: color 0.2s;
     display: flex;
     align-items: center;
   }
 
-  .footer-social a:hover { color: #c9b99a; }
+  .footer-social a:hover { color: var(--gold); }
 
   .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
 
