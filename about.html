@@ -34,16 +34,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 3rem;
+    padding: 1.6rem 4rem;
     border-bottom: 1px solid #1e1e1e;
+    position: sticky;
+    top: 0;
+    background: var(--bg, #0e0e0e);
+    z-index: 100;
   }
 
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 0.08em;
-    color: #f0ece4;
+    color: var(--gold, #c9b99a);
     text-decoration: none;
   }
 
@@ -63,7 +67,7 @@
   }
 
   .nav-links a:hover,
-  .nav-links a.active { color: #f0ece4; }
+  .nav-links a.active { color: var(--gold, #c9b99a); }
 
   .lang {
     display: flex;

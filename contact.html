@@ -81,6 +81,24 @@
       color: var(--gold);
     }
 
+    .lang {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .lang span {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #444;
+      cursor: pointer;
+    }
+
+    .lang span.active {
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+
     /* ── PAGE HEADER ── */
     .page-header {
       padding: 4rem 4rem 2.5rem;
