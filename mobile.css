@@ -4,6 +4,15 @@
    <link rel="stylesheet" href="mobile.css" />
    ============================================================ */
 
+/* Inline dates — hidden on desktop, shown on mobile only */
+.event-dates-inline {
+  display: none;
+  font-size: 0.68rem;
+  color: #9a8c78;
+  letter-spacing: 0.08em;
+  margin-top: 0.5rem;
+}
+
 /* ── HAMBURGER BUTTON (hidden on desktop) ── */
 .nav-toggle {
   display: none;
@@ -123,11 +132,16 @@
     letter-spacing: 0.14em;
   }
 
-  /* Hide language switcher on mobile */
+  /* Language switcher — shown on mobile, full width below nav */
   .lang,
   .lang-dark,
   .lang-light {
-    display: none;
+    display: flex;
+    order: 3;
+    width: 100%;
+    padding: 0.6rem 0.2rem 0.2rem;
+    border-top: 1px solid #2a2a2a;
+    gap: 1.2rem;
   }
 
   /* ── GLOBAL PADDING ── */
@@ -158,10 +172,11 @@
   /* ── FOOTER ── */
   footer {
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     gap: 1rem !important;
     padding-top: 1.4rem !important;
     padding-bottom: 1.4rem !important;
+    text-align: center;
   }
 
   /* ── HOMEPAGE ── */
@@ -176,6 +191,11 @@
     height: 55vw !important;
     min-height: 220px;
     max-height: 340px;
+  }
+
+  .hero-image-dark img,
+  .hero-image-light img {
+    object-position: center 30% !important;
   }
 
   .hero-text-dark,
@@ -209,8 +229,9 @@
   .footer-light {
     padding: 1.4rem !important;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.8rem;
+    text-align: center;
   }
 
   /* body grid: don't stretch hero to fill remaining height once stacked */
@@ -276,7 +297,6 @@
   }
 
   /* ── EVENTS PAGE ── */
-  /* main already has 1.4rem side padding; zero out inner container padding */
   .events-container {
     padding: 0 !important;
     padding-bottom: 2rem !important;
@@ -290,6 +310,16 @@
 
   .event-dates-right {
     display: none !important;
+  }
+
+  /* Show inline dates on mobile */
+  .event-dates-inline {
+    display: block !important;
+    font-size: 0.68rem;
+    color: #9a8c78;
+    letter-spacing: 0.08em;
+    margin-top: 0.4rem;
+    line-height: 1.8;
   }
 
   .event-opera {
