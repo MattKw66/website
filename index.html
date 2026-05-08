@@ -23,48 +23,58 @@
   }
 
   /* NAV */
-  .nav-dark {
+  nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 2rem 3rem;
+    justify-content: space-between;
+    padding: 1.6rem 4rem;
     border-bottom: 1px solid #2a2a2a;
+    position: sticky;
+    top: 0;
+    background: #0e0e0e;
+    z-index: 100;
   }
 
-  .nav-logo-dark {
+  .nav-logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 0.08em;
-    color: #f0ece4;
+    color: #c9b99a;
     text-decoration: none;
+    white-space: nowrap;
   }
 
-  .nav-links-dark {
+  .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 2.4rem;
     list-style: none;
   }
 
-  .nav-links-dark a {
+  .nav-links a {
     font-family: 'Jost', sans-serif;
     font-size: 0.72rem;
+    font-weight: 400;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #666;
+    color: #e8e0d5;
     text-decoration: none;
-    transition: color 0.2s;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
   }
 
-  .nav-links-dark a:hover,
-  .nav-links-dark a.active { color: #f0ece4; }
+  .nav-links a:hover,
+  .nav-links a.active {
+    opacity: 1;
+    color: #c9b99a;
+  }
 
-  .lang-dark {
+  .lang {
     display: flex;
     gap: 1rem;
   }
 
-  .lang-dark span {
+  .lang span {
     font-size: 0.68rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -72,7 +82,7 @@
     cursor: pointer;
   }
 
-  .lang-dark span.active {
+  .lang span.active {
     color: #c9b99a;
     border-bottom: 1px solid #c9b99a;
   }
@@ -188,18 +198,20 @@
   }
 
   /* FOOTER */
-  .footer-dark {
-    padding: 1.5rem 3rem;
+  footer {
     border-top: 1px solid #2a2a2a;
+    padding: 1.8rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
 
-  .footer-dark span {
-    font-size: 0.68rem;
-    color: #444;
-    letter-spacing: 0.08em;
+  footer span, footer p {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7a7060;
   }
 
   .footer-social {
@@ -230,19 +242,19 @@
 </head>
 <body>
 
-<nav class="nav-dark">
-  <a href="index.html" class="nav-logo-dark">Maciej Kwaśnikowski</a>
+<nav>
+  <a href="index.html" class="nav-logo">Maciej Kwaśnikowski</a>
   <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links-dark">
+  <ul class="nav-links">
     <li><a href="about.html" data-i18n="nav_about">About</a></li>
     <li><a href="events.html" data-i18n="nav_events">Events</a></li>
     <li><a href="recordings.html" data-i18n="nav_recordings">Recordings</a></li>
     <li><a href="press.html" data-i18n="nav_press">Press</a></li>
     <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
   </ul>
-  <div class="lang-dark">
+  <div class="lang">
     <span class="active">EN</span>
     <span>FR</span>
     <span>PL</span>
@@ -265,7 +277,7 @@
   </div>
 </div>
 
-<footer class="footer-dark">
+<footer>
   <span data-i18n="footer_copyright">© Maciej Kwaśnikowski 2026</span>
   <nav class="footer-social" aria-label="Social media">
     <a href="https://www.facebook.com/profile.php?id=61570806491326" target="_blank" rel="noopener" aria-label="Facebook">
@@ -283,7 +295,7 @@
 
 <script>
   const toggle = document.querySelector('.nav-toggle');
-  const links  = document.querySelector('.nav-links-dark');
+  const links  = document.querySelector('.nav-links');
   toggle.addEventListener('click', () => {
     const open = links.classList.toggle('open');
     toggle.classList.toggle('open', open);
