@@ -182,7 +182,8 @@ const TRANSLATIONS = {
     sidebar_studies_val: "Neila Shicoffa",
     sidebar_also:        "Ponadto",
     sidebar_degree:      "Inżynier fizyki technicznej\nPolitechnika Poznańska, 2017",
-    bio_intro: "„Jego naturalnie potężny i lekki głos w rejestrach środkowym i górnym pozwala mu z łatwością wypełniać przestrzeń błyskotliwą barwą."",
+    bio_intro: `„Jego naturalnie potężny i lekki głos w rejestrach środkowym i górnym pozwala mu z łatwością wypełniać przestrzeń błyskotliwą barwą."`,
+
     bio_p1: "Polski tenor <strong>Maciej Kwaśnikowski</strong> urodził się w Poznaniu i zaczął śpiewać jako chłopiec-sopran w wieku 9 lat. Formalną naukę śpiewu rozpoczął u polskiego kontratenora <strong>Roberta Nakonecznego</strong> w 2014 roku, a w 2015 wstąpił do Akademii Operowej Teatru Wielkiego – Opery Narodowej, gdzie pracował z Izabelą Kłosińską, Eytanem Pessenem i Matthiasem Rexrothem.",
     bio_p2: "W 2017 roku, równolegle z kształceniem muzycznym, uzyskał tytuł inżyniera fizyki technicznej na Politechnice Poznańskiej. W tym samym roku śpiewał rolę Florville'a w <em>Il Signor Bruschino</em> Rossiniego z Orchestre national d'Île-de-France pod dyrekcją <strong>Enrique Mazzoli</strong> i wstąpił do Académie de l'Opéra national de Paris. Brał również udział w Young Singers Project Salzburger Festspiele oraz w Académie du Festival d'Aix-en-Provence.",
     bio_p3: "W Akademii Opery Paryskiej śpiewał Alfreda w <em>Zemście Nietoperza</em> oraz Młodego Dżentelmena w <em>Reigen</em> Philippe'a Boesmansu. Otrzymał Prix Lyrique du Cercle Carpeaux (2018) i Prix Lyrique de l'AROP (2019).",
