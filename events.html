@@ -8,7 +8,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mobile.css" />
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #0e0e0e;
+    --gold:   #c9b99a;
+    --text:   #e8e0d5;
+    --muted:  #7a7060;
+    --border: #2a2520;
+  }
 
   html { font-size: 18px; }
 
@@ -78,7 +86,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #444;
+    color: #888;
     cursor: pointer;
   }
 
@@ -108,7 +116,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #444;
+    color: var(--muted);
   }
 
   /* EVENTS LIST */
@@ -124,29 +132,29 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    padding: 3rem 0 1rem;
+    padding: 4rem 0 1.5rem;
   }
 
   .year-label {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     letter-spacing: 0.3em;
-    color: #333;
+    color: var(--muted);
     flex-shrink: 0;
   }
 
   .year-line {
     flex: 1;
     height: 1px;
-    background: #1e1e1e;
+    background: #2a2520;
   }
 
   /* SINGLE EVENT */
   .event {
     display: grid;
-    grid-template-columns: 56px 1fr auto;
+    grid-template-columns: 76px 1fr auto;
     gap: 0 2rem;
-    padding: 2rem 0;
+    padding: 3.2rem 0;
     border-bottom: 1px solid #161616;
     align-items: start;
     transition: background 0.2s;
@@ -166,32 +174,32 @@
   }
 
   .event-month {
-    font-size: 0.58rem;
+    font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #444;
+    color: #888;
   }
 
   .event-day {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
+    font-size: 2.9rem;
     font-weight: 300;
-    color: #333;
+    color: #c9b99a;
     line-height: 1;
     margin: 0.1rem 0;
   }
 
   .event-year-small {
-    font-size: 0.58rem;
+    font-size: 0.68rem;
     letter-spacing: 0.1em;
-    color: #333;
+    color: var(--muted);
   }
 
   /* MAIN EVENT INFO */
   .event-info {}
 
   .event-role {
-    font-size: 0.62rem;
+    font-size: 0.72rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: #c9b99a;
@@ -200,7 +208,7 @@
 
   .event-opera {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-weight: 400;
     color: #f0ece4;
     line-height: 1.1;
@@ -210,20 +218,20 @@
 
   .event-composer {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-style: italic;
-    color: #555;
+    color: #998878;
     margin-bottom: 0.6rem;
   }
 
   .event-venue {
-    font-size: 0.78rem;
+    font-size: 0.88rem;
     color: #666;
     letter-spacing: 0.04em;
   }
 
   .event-venue span {
-    color: #444;
+    color: #666;
     margin: 0 0.4rem;
   }
 
@@ -234,8 +242,8 @@
   }
 
   .event-dates-list {
-    font-size: 0.7rem;
-    color: #444;
+    font-size: 0.8rem;
+    color: var(--muted);
     line-height: 2;
     letter-spacing: 0.05em;
   }
@@ -243,12 +251,12 @@
   .event-link {
     display: inline-block;
     margin-top: 0.8rem;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #333;
+    color: var(--muted);
     text-decoration: none;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid var(--border);
     padding-bottom: 0.1rem;
     transition: color 0.2s, border-color 0.2s;
   }
@@ -260,17 +268,25 @@
 
   /* CONCERT (no role) */
   .event-type-concert .event-role {
-    color: #555;
+    color: #888;
   }
 
+  /* UPCOMING — brighter palette */
+  .event:not(.past) .event-month { color: #b0a898; }
+  .event:not(.past) .event-year-small { color: #b0a898; }
+  .event:not(.past) .event-composer { color: #c4b090; }
+  .event:not(.past) .event-venue { color: #a09888; }
+  .event:not(.past) .event-dates-list { color: #a09888; }
+  .event:not(.past) .event-link { color: #a09888; border-bottom-color: #3a3530; }
+
   /* PAST indicator */
-  .event.past .event-opera { color: #333; }
-  .event.past .event-day { color: #222; }
-  .event.past .event-role { color: #333; }
-  .event.past .event-composer { color: #2a2a2a; }
-  .event.past .event-venue { color: #2a2a2a; }
-  .event.past .event-dates-list { color: #2a2a2a; }
-  .event.past:hover .event-opera { color: #555; }
+  .event.past .event-opera { color: #666; }
+  .event.past .event-day { color: #7a6e5a; }
+  .event.past .event-role { color: #5a4e3a; }
+  .event.past .event-composer { color: #504840; }
+  .event.past .event-venue { color: #504840; }
+  .event.past .event-dates-list { color: #504840; }
+  .event.past:hover .event-opera { color: #888; }
 
 /* ── FOOTER ── */
 footer {
@@ -281,7 +297,7 @@ footer {
   align-items: center;
   gap: 1rem;
 }
-footer p {
+footer p, footer span {
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
