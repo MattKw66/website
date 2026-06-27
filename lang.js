@@ -36,8 +36,7 @@
 
   /* ── 3. Update switcher button states ── */
   function updateSwitcher(lang) {
-    /* Handles .lang, .lang-dark, .lang-light variants */
-    document.querySelectorAll('.lang span, .lang-dark span, .lang-light span').forEach(span => {
+    document.querySelectorAll('.lang span').forEach(span => {
       const isActive = span.textContent.trim().toLowerCase() === lang;
       span.classList.toggle('active', isActive);
     });
@@ -53,7 +52,7 @@
 
   /* ── 5. Wire up switcher clicks ── */
   function bindSwitcher() {
-    document.querySelectorAll('.lang span, .lang-dark span, .lang-light span').forEach(span => {
+    document.querySelectorAll('.lang span').forEach(span => {
       const choose = () => setLang(span.textContent.trim().toLowerCase());
       span.addEventListener('click', choose);
       span.addEventListener('keydown', e => {
