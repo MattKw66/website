@@ -54,8 +54,10 @@
   /* ── 5. Wire up switcher clicks ── */
   function bindSwitcher() {
     document.querySelectorAll('.lang span, .lang-dark span, .lang-light span').forEach(span => {
-      span.addEventListener('click', () => {
-        setLang(span.textContent.trim().toLowerCase());
+      const choose = () => setLang(span.textContent.trim().toLowerCase());
+      span.addEventListener('click', choose);
+      span.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(); }
       });
     });
   }

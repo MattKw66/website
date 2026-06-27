@@ -23,8 +23,6 @@ const TRANSLATIONS = {
     hero_subtitle:   "Polish tenor",
     hero_bio:        "Graduate of the prestigious Metropolitan Opera's Lindemann Program, praised by international critics for his vocal technique, acting skills and timbre, he has performed with the Vienna Philharmonic, Bavarian Radio Symphony Orchestra, and the Orchestra of the Paris Opera.",
     next_label:      "Next performances",
-    next_title:      "Roméo et Juliette — Teatro Real de Madrid",
-    next_detail:     "Role: Tybalt · Charles Gounod",
 
     /* ── ABOUT ── */
     about_page_title:   "Maciej Kwaśnikowski — Tenor",
@@ -41,7 +39,7 @@ const TRANSLATIONS = {
     sidebar_studies:     "Studies with",
     sidebar_studies_val: "Neil Shicoff",
     sidebar_also:        "Also",
-    sidebar_degree:      "B.Sc. in Engineering Physics\nPoznań University of Technology, 2017",
+    sidebar_degree:      "B.Sc. in Engineering Physics<br>Poznań University of Technology, 2017",
     bio_intro: "\"His naturally powerful and light voice in the middle and upper registers allows him to easily dominate the space with a brilliant timbre.\"",
     bio_p1: "Polish tenor <strong>Maciej Kwaśnikowski</strong> was born in Poznań and started singing at the age of 9 as a boy soprano. He began formal vocal studies with Polish countertenor <strong>Robert Nakoneczny</strong> in 2014, and in 2015 entered the Warsaw Opera Academy at the Polish National Opera, where he worked with Izabela Kłosińska, Eytan Pessen and Matthias Rexroth.",
     bio_p2: "In 2017, alongside his musical training, he earned a degree in engineering physics from the Poznań University of Technology. That same year he sang the role of Florville in Rossini's <em>Il Signor Bruschino</em> with the Orchestre national d'Île-de-France under <strong>Enrique Mazzola</strong>, and entered the Académie de l'Opéra national de Paris. He was also part of the Young Singers Project of the Salzburger Festspiele and the Académie du Festival d'Aix-en-Provence.",
@@ -57,6 +55,8 @@ const TRANSLATIONS = {
     events_subtitle:    "2025 — 2026 Season",
     events_upcoming:    "Upcoming",
     events_past:        "Past",
+    events_tba:         "TBA",
+    events_tba_dates:   "Dates to be announced",
     event_page_link:    "Event page ↗",
     role_label:         "Role",
     concert_label:      "Tenor solo · Concert",
@@ -91,10 +91,8 @@ const TRANSLATIONS = {
 
     /* ── INDEX ── */
     hero_subtitle:   "Ténor polonais",
-    hero_bio:        "Ancien membre du Lindemann Program du Metropolitan Opera, salué par la critique internationale pour sa technique vocale, son jeu scénique et son timbre, il s'est produit avec le Philharmonique de Vienne, l'Orchestre symphonique de la Radio bavaroise et l'Orchestre de l'Opéra de Paris.",
+    hero_bio:        "Ancien élève du prestigieux Lindemann Program du Metropolitan Opera, salué par la critique internationale pour sa technique vocale, son jeu scénique et son timbre, il s'est produit avec le Philharmonique de Vienne, l'Orchestre symphonique de la Radio bavaroise et l'Orchestre de l'Opéra de Paris.",
     next_label:      "Prochaines représentations",
-    next_title:      "Roméo et Juliette — Teatro Real de Madrid",
-    next_detail:     "Rôle : Tybalt · Charles Gounod",
 
     /* ── ABOUT ── */
     about_page_title:    "Maciej Kwaśnikowski — Ténor",
@@ -111,14 +109,14 @@ const TRANSLATIONS = {
     sidebar_studies:     "Études avec",
     sidebar_studies_val: "Neil Shicoff",
     sidebar_also:        "Également",
-    sidebar_degree:      "Licence en physique de l'ingénieur\nUniversité polytechnique de Poznań, 2017",
+    sidebar_degree:      "Licence en physique de l'ingénieur<br>Université polytechnique de Poznań, 2017",
     bio_intro: "« Son timbre brillant et sa voix naturellement puissante et légère dans les registres médian et aigu lui permettent d'emplir l'espace avec aisance. »",
-    bio_p1: "Né à Poznań, le ténor polonais <strong>Maciej Kwaśnikowski</strong> commence à chanter à l'âge de 9 ans comme soprano. Il entame une formation vocale formelle auprès du contre-ténor polonais <strong>Robert Nakoneczny</strong> en 2014, puis intègre en 2015 l'Académie de l'Opéra national de Varsovie, où il travaille avec Izabela Kłosińska, Eytan Pessen et Matthias Rexroth.",
+    bio_p1: "Né à Poznań, le ténor polonais <strong>Maciej Kwaśnikowski</strong> commence à chanter à l'âge de 9 ans comme jeune soprano. Il entame une formation vocale formelle auprès du contre-ténor polonais <strong>Robert Nakoneczny</strong> en 2014, puis intègre en 2015 l'Académie d'Opéra de Varsovie, rattachée à l'Opéra national de Pologne, où il travaille avec Izabela Kłosińska, Eytan Pessen et Matthias Rexroth.",
     bio_p2: "En 2017, parallèlement à sa formation musicale, il obtient une licence en physique de l'ingénieur à l'Université polytechnique de Poznań. Cette même année, il chante le rôle de Florville dans <em>Il Signor Bruschino</em> de Rossini avec l'Orchestre national d'Île-de-France sous la direction d'<strong>Enrique Mazzola</strong>, et entre à l'Académie de l'Opéra national de Paris. Il participe également au Young Singers Project des Salzburger Festspiele et à l'Académie du Festival d'Aix-en-Provence.",
     bio_p3: "À l'Académie de l'Opéra de Paris, il incarne Alfred dans <em>La Chauve-souris</em> et le Jeune Homme dans <em>Reigen</em> de Philippe Boesmans. Il reçoit le Prix Lyrique du Cercle Carpeaux (2018) et le Prix Lyrique de l'AROP (2019).",
     bio_p4: "En 2019, il rejoint le prestigieux <strong>Lindemann Program du Metropolitan Opera</strong>. Ses débuts au MET dans le rôle du Jeune Matelot dans <em>Tristan und Isolde</em> de Wagner, ainsi que d'autres engagements, ont été annulés en raison de la pandémie de Covid-19.",
-    bio_p5: "Il a chanté les solos de ténor dans de grandes œuvres oratoriales de Bach, Haendel et Mozart, notamment dans la Messe en mi bémol majeur de Schubert avec le <strong>Wiener Philharmoniker</strong> au Festival de Salzbourg (2018) et avec le <strong>Symphonieorchester des Bayerischen Rundfunks</strong> à Munich (2019), toutes deux sous la direction de <strong>Riccardo Muti</strong>. Habitué du Festival de Salzbourg, il rechante la Messe de Schubert en 2022 avec la Camerata Salzburg sous <strong>Franz Welser-Möst</strong>, et interprète la Messe du Couronnement de Mozart avec l'Orchestre Mozarteum sous <strong>Roberto González-Monjas</strong> en 2023. En 2024, il ajoute à son répertoire <em>La Création</em> de Haydn à l'Opéra de Montpellier.",
-    bio_p6: "Depuis la saison 2021/2022, Maciej se produit régulièrement à l'<strong>Opéra de Paris</strong>, notamment dans le rôle de Tybalt dans une nouvelle production de <em>Roméo et Juliette</em> de Gounod dirigée par Carlo Rizzi, et dans les rôles du Jeune Matelot et du Berger dans la mise en scène de Peter Sellars de <em>Tristan und Isolde</em> de Wagner sous la direction de <strong>Gustavo Dudamel</strong>, toujours accueilli avec enthousiasme par la critique. En 2025, il fait ses débuts dans le rôle et à l'Opéra national de Pologne dans le rôle de Tamino dans <em>La Flûte enchantée</em> de Mozart.",
+    bio_p5: "Il chante les solos de ténor dans de grandes œuvres oratoriales de Bach, Haendel et Mozart, notamment dans la Messe en mi bémol majeur de Schubert avec le <strong>Wiener Philharmoniker</strong> au Festival de Salzbourg (2018) et avec le <strong>Symphonieorchester des Bayerischen Rundfunks</strong> à Munich (2019), toutes deux sous la direction de <strong>Riccardo Muti</strong>. Habitué du Festival de Salzbourg, il rechante la Messe de Schubert en 2022 avec la Camerata Salzburg sous <strong>Franz Welser-Möst</strong>, et interprète la Messe du Couronnement de Mozart avec l'Orchestre Mozarteum sous <strong>Roberto González-Monjas</strong> en 2023. En 2024, il ajoute à son répertoire <em>La Création</em> de Haydn à l'Opéra de Montpellier.",
+    bio_p6: "Depuis la saison 2021/2022, Maciej se produit régulièrement à l'<strong>Opéra de Paris</strong>, notamment dans le rôle de Tybalt dans une nouvelle production de <em>Roméo et Juliette</em> de Gounod dirigée par Carlo Rizzi, et dans les rôles du Jeune Matelot et du Berger dans la mise en scène de Peter Sellars de <em>Tristan und Isolde</em> de Wagner sous la direction de <strong>Gustavo Dudamel</strong>, toujours accueilli avec enthousiasme par la critique. En 2025, il fait ses débuts dans le rôle de Tamino et à l'Opéra national de Pologne dans <em>La Flûte enchantée</em> de Mozart.",
     bio_p7: "Au cours de la saison 2025/2026, il chante Beppe dans <em>Pagliacci</em> de Leoncavallo et le solo de ténor dans la Messe du Couronnement de Mozart à l'Opéra de Montpellier, Tybalt dans <em>Roméo et Juliette</em> de Gounod à la <strong>Staatsoper Berlin</strong> et au <strong>Teatro Real de Madrid</strong>, Narraboth dans <em>Salomé</em> de Strauss et Michel dans <em>Julietta</em> de Martinů à l'Opéra de Wrocław, et Alméric dans <em>Iolanta</em> de Tchaïkovski à l'Opéra de Rouen.",
     bio_p8: "Maciej travaille sa voix avec <strong>Neil Shicoff</strong> depuis 2016.",
 
@@ -127,6 +125,8 @@ const TRANSLATIONS = {
     events_subtitle: "Saison 2025 — 2026",
     events_upcoming: "À venir",
     events_past:     "Passés",
+    events_tba:      "À conf.",
+    events_tba_dates: "Dates à confirmer",
     event_page_link: "Page de l'événement ↗",
     role_label:      "Rôle",
     concert_label:   "Solo de ténor · Concert",
@@ -163,8 +163,6 @@ const TRANSLATIONS = {
     hero_subtitle:   "Polski tenor",
     hero_bio:        "Absolwent prestiżowego Programu Lindemanna w Metropolitan Opera, chwalony przez międzynarodową krytykę za technikę wokalną, grę aktorską i barwę głosu, występował z Wiener Philharmoniker, Orkiestrą Symfoniczną Radia Bawarskiego oraz Orkiestrą Opéra de Paris.",
     next_label:      "Najbliższe spektakle",
-    next_title:      "Roméo et Juliette — Teatro Real de Madrid",
-    next_detail:     "Rola: Tybalt · Charles Gounod",
 
     /* ── ABOUT ── */
     about_page_title:    "Maciej Kwaśnikowski — Tenor",
@@ -181,7 +179,7 @@ const TRANSLATIONS = {
     sidebar_studies:     "Studia u",
     sidebar_studies_val: "Neila Shicoffa",
     sidebar_also:        "Ponadto",
-    sidebar_degree:      "Inżynier fizyki technicznej\nPolitechnika Poznańska, 2017",
+    sidebar_degree:      "Inżynier fizyki technicznej<br>Politechnika Poznańska, 2017",
     bio_intro: `„Jego naturalnie potężny i lekki głos w rejestrach środkowym i górnym pozwala mu z łatwością wypełniać przestrzeń błyskotliwą barwą."`,
 
     bio_p1: "Polski tenor <strong>Maciej Kwaśnikowski</strong> urodził się w Poznaniu i zaczął śpiewać jako chłopiec-sopran w wieku 9 lat. Formalną naukę śpiewu rozpoczął u polskiego kontratenora <strong>Roberta Nakonecznego</strong> w 2014 roku, a w 2015 wstąpił do Akademii Operowej Teatru Wielkiego – Opery Narodowej, gdzie pracował z Izabelą Kłosińską, Eytanem Pessenem i Matthiasem Rexrothem.",
@@ -198,6 +196,8 @@ const TRANSLATIONS = {
     events_subtitle: "Sezon 2025 — 2026",
     events_upcoming: "Nadchodzące",
     events_past:     "Minione",
+    events_tba:      "Wkrótce",
+    events_tba_dates: "Terminy do potwierdzenia",
     event_page_link: "Strona wydarzenia ↗",
     role_label:      "Rola",
     concert_label:   "Partia tenorowa · Koncert",

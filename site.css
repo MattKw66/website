@@ -1,0 +1,143 @@
+/* site.css — shared base, variables, nav & footer for maciejkwasnikowski.com
+   ---------------------------------------------------------------------------
+   Loaded on every page BEFORE mobile.css and before each page's own <style>.
+   Page-specific styling (hero, bio, events list, reviews, etc.) stays in the
+   page's <style> block. Edit anything shared — colours, nav, footer — here,
+   once, and it changes everywhere.
+
+   Link order in <head>:
+       <link rel="stylesheet" href="site.css" />
+       <link rel="stylesheet" href="mobile.css" />
+       <style> … page-specific … </style>
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:       #0e0e0e;
+  --bg2:      #161616;
+  --gold:     #c9b99a;
+  --gold-dim: #9a8c78;
+  --text:     #e8e0d5;
+  --muted:    #7a7060;
+  --border:   #2a2520;
+}
+
+html { font-size: 18px; }
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 4rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.4rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  opacity: 1;
+  color: var(--gold);
+}
+
+.lang {
+  display: flex;
+  gap: 1rem;
+}
+
+.lang span {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #444;
+  cursor: pointer;
+}
+
+.lang span:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.lang span.active {
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.8rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer p,
+footer span {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.footer-social a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.footer-social a:hover { color: var(--gold); }
+
+.footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+.footer-social .operabase-link {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
