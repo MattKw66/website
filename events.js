@@ -37,7 +37,7 @@ const EVENTS = [
     venue: 'Opera Wrocławska · Wrocław, Poland',
     dates: [],
     tba: true,
-    sortDate: '2026-09-20',   // approximate — keeps it before Salome
+    sortDate: '2026-10-01',   // October 2026 — exact dates TBA; keeps it before Salome
   },
   {
     type: 'opera',
@@ -47,6 +47,14 @@ const EVENTS = [
     venue: 'Opera Wrocławska · Wrocław, Poland',
     link: 'https://www.opera.wroclaw.pl/salome-richard-strauss',
     dates: ['2026-10-18', '2026-10-21', '2026-10-23', '2026-10-25'],
+  },
+  {
+    type: 'concert',
+    opera: 'Requiem',
+    composer: 'W. A. Mozart',
+    venue: 'Philharmonie de Paris — Grande salle Pierre Boulez',
+    link: 'https://philharmoniedeparis.fr/fr/activite/concert-vocal/29332-wolfgang-amadeus-mozart-requiem?itemId=145792',
+    dates: ['2026-12-06'],
   },
   {
     type: 'opera',
@@ -84,6 +92,8 @@ window.EVENTS = EVENTS;
 (function () {
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const MONTHS_FULL = ['January', 'February', 'March', 'April', 'May', 'June',
+                       'July', 'August', 'September', 'October', 'November', 'December'];
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -120,12 +130,19 @@ window.EVENTS = EVENTS;
     if (isPast(ev)) classes.push('past');
     if (ev.type === 'concert') classes.push('event-type-concert');
 
-    let dateCol;
+    let dateCol, tbaText = null;
     if (ev.tba) {
-      const yr = ev.sortDate ? parseDate(ev.sortDate).getFullYear() : '';
-      dateCol =
-        '<span class="event-day" style="font-size:1.3rem;letter-spacing:0.1em;" data-i18n="events_tba">TBA</span>' +
-        (yr ? '<span class="event-year-small">' + yr + '</span>' : '');
+      const sd = ev.sortDate ? parseDate(ev.sortDate) : null;
+      if (sd) {
+        // Month known, exact dates not yet confirmed → "Oct / 2026" + "October 2026 — TBA"
+        dateCol =
+          '<span class="event-day" style="font-size:1.5rem;letter-spacing:0.06em;">' + MONTHS[sd.getMonth()] + '</span>' +
+          '<span class="event-year-small">' + sd.getFullYear() + '</span>';
+        tbaText = MONTHS_FULL[sd.getMonth()] + ' ' + sd.getFullYear() + ' — TBA';
+      } else {
+        // Nothing known yet
+        dateCol = '<span class="event-day" style="font-size:1.3rem;letter-spacing:0.1em;" data-i18n="events_tba">TBA</span>';
+      }
     } else {
       const f = firstDate(ev);
       dateCol =
@@ -143,13 +160,17 @@ window.EVENTS = EVENTS;
         '<span data-i18n="event_page_link">Event page ↗</span></a>'
       : '';
 
-    const datesRight = ev.tba
-      ? '<div class="event-dates-list" data-i18n="events_tba_dates">Dates to be announced</div>'
-      : '<div class="event-dates-list">' + datesList(ev) + '</div>';
-
-    const datesInline = ev.tba
-      ? '<div class="event-dates-inline" data-i18n="events_tba_dates">Dates to be announced</div>'
-      : '<div class="event-dates-inline">' + datesList(ev) + '</div>';
+    let datesRight, datesInline;
+    if (ev.tba && tbaText) {
+      datesRight  = '<div class="event-dates-list">' + tbaText + '</div>';
+      datesInline = '<div class="event-dates-inline">' + tbaText + '</div>';
+    } else if (ev.tba) {
+      datesRight  = '<div class="event-dates-list" data-i18n="events_tba_dates">Dates to be announced</div>';
+      datesInline = '<div class="event-dates-inline" data-i18n="events_tba_dates">Dates to be announced</div>';
+    } else {
+      datesRight  = '<div class="event-dates-list">' + datesList(ev) + '</div>';
+      datesInline = '<div class="event-dates-inline">' + datesList(ev) + '</div>';
+    }
 
     return (
       '<div class="' + classes.join(' ') + '">' +
