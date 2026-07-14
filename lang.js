@@ -46,6 +46,9 @@
   function setLang(lang) {
     if (!SUPPORTED.includes(lang)) lang = DEFAULT;
     localStorage.setItem(LS_KEY, lang);
+    /* Tell other scripts (e.g. press.js) to re-render FIRST, so that any markup
+       they regenerate is then picked up by applyTranslations below. */
+    document.dispatchEvent(new CustomEvent('mk:langchange', { detail: { lang } }));
     applyTranslations(lang);
     updateSwitcher(lang);
   }
