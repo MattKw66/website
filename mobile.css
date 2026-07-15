@@ -4,13 +4,15 @@
    <link rel="stylesheet" href="mobile.css" />
    ============================================================ */
 
-/* Inline dates — hidden on desktop, shown on mobile only */
+/* Inline dates — hidden on desktop, shown on mobile only
+   (all styling lives here; the 640px media query only flips display) */
 .event-dates-inline {
   display: none;
   font-size: 0.68rem;
-  color: #9a8c78;
+  color: var(--gold-dim);
   letter-spacing: 0.08em;
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
+  line-height: 1.8;
 }
 
 /* ── HAMBURGER BUTTON (hidden on desktop) ── */
@@ -30,7 +32,7 @@
   display: block;
   width: 24px;
   height: 1.5px;
-  background: #c9b99a;
+  background: var(--gold);
   transition: transform 0.3s, opacity 0.3s;
   transform-origin: center;
 }
@@ -206,7 +208,7 @@
 
   /* hero image gradient should fade downward when image sits above text */
   .hero-image-dark::after {
-    background: linear-gradient(to bottom, transparent 60%, #0e0e0e) !important;
+    background: linear-gradient(to bottom, transparent 60%, var(--bg)) !important;
   }
 
   /* ── ABOUT PAGE ── */
@@ -273,12 +275,7 @@
 
   /* Show inline dates on mobile */
   .event-dates-inline {
-    display: block !important;
-    font-size: 0.68rem;
-    color: #9a8c78;
-    letter-spacing: 0.08em;
-    margin-top: 0.4rem;
-    line-height: 1.8;
+    display: block;
   }
 
   .event-opera {

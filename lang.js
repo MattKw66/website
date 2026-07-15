@@ -12,12 +12,14 @@
 
   /* ── 1. Determine active language ── */
   function getLang() {
-    const stored = localStorage.getItem(LS_KEY);
+    let stored = null;
+    try { stored = localStorage.getItem(LS_KEY); } catch (e) { /* storage blocked */ }
     return SUPPORTED.includes(stored) ? stored : DEFAULT;
   }
 
   /* ── 2. Apply all data-i18n attributes ── */
   function applyTranslations(lang) {
+    if (typeof TRANSLATIONS === 'undefined') return; // translations.js failed to load
     const t = TRANSLATIONS[lang] || TRANSLATIONS[DEFAULT];
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
@@ -45,7 +47,7 @@
   /* ── 4. Full apply ── */
   function setLang(lang) {
     if (!SUPPORTED.includes(lang)) lang = DEFAULT;
-    localStorage.setItem(LS_KEY, lang);
+    try { localStorage.setItem(LS_KEY, lang); } catch (e) { /* storage blocked */ }
     /* Tell other scripts (e.g. press.js) to re-render FIRST, so that any markup
        they regenerate is then picked up by applyTranslations below. */
     document.dispatchEvent(new CustomEvent('mk:langchange', { detail: { lang } }));

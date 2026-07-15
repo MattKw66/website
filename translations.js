@@ -21,11 +21,16 @@ const TRANSLATIONS = {
 
     /* ── INDEX ── */
     hero_subtitle:   "Tenor",
-    hero_bio:        "Graduate of the prestigious Metropolitan Opera's Lindemann Program, praised by international critics for his vocal technique, acting skills and timbre, he has performed with the Vienna Philharmonic, Bavarian Radio Symphony Orchestra, and the Orchestra of the Paris Opera.",
+    hero_bio:        "A graduate of the Metropolitan Opera's prestigious Lindemann Program, praised by international critics for his vocal technique, timbre and stagecraft, he appears regularly on the stages of Europe's leading opera houses — the Staatsoper Berlin, Teatro Real de Madrid, Teatro Regio di Torino and the Opéra national de Paris.",
     next_label:      "Next performances",
 
     /* ── ABOUT ── */
-    about_page_title:   "Maciej Kwaśnikowski — Tenor",
+    title_home:        "Maciej Kwaśnikowski — Tenor",
+    title_about:       "About — Maciej Kwaśnikowski, Tenor",
+    title_events:      "Events — Maciej Kwaśnikowski, Tenor",
+    title_recordings:  "Recordings — Maciej Kwaśnikowski, Tenor",
+    title_press:       "Press — Maciej Kwaśnikowski, Tenor",
+    title_contact:     "Contact — Maciej Kwaśnikowski, Tenor",
     about_hero_subtitle:"Tenor",
     photo_credit:        "© Julien Benhamou / l'AROP — with Benjamin d'Anfray at the Palais Garnier",
     sidebar_voice:       "Voice",
@@ -92,11 +97,16 @@ const TRANSLATIONS = {
 
     /* ── INDEX ── */
     hero_subtitle:   "Ténor",
-    hero_bio:        "Ancien élève du prestigieux Lindemann Program du Metropolitan Opera, salué par la critique internationale pour sa technique vocale, son jeu scénique et son timbre, il s'est produit avec le Philharmonique de Vienne, l'Orchestre symphonique de la Radio bavaroise et l'Orchestre de l'Opéra de Paris.",
+    hero_bio:        "Diplômé du prestigieux Lindemann Program du Metropolitan Opera, salué par la critique internationale pour sa technique vocale, son timbre et son jeu scénique, il se produit régulièrement sur les plus grandes scènes lyriques d'Europe — la Staatsoper de Berlin, le Teatro Real de Madrid, le Teatro Regio di Torino et l'Opéra national de Paris.",
     next_label:      "Prochaines représentations",
 
     /* ── ABOUT ── */
-    about_page_title:    "Maciej Kwaśnikowski — Ténor",
+    title_home:        "Maciej Kwaśnikowski — Ténor",
+    title_about:       "Biographie — Maciej Kwaśnikowski, ténor",
+    title_events:      "Agenda — Maciej Kwaśnikowski, ténor",
+    title_recordings:  "Vidéos — Maciej Kwaśnikowski, ténor",
+    title_press:       "Presse — Maciej Kwaśnikowski, ténor",
+    title_contact:     "Contact — Maciej Kwaśnikowski, ténor",
     about_hero_subtitle: "Ténor",
     photo_credit:        "© Julien Benhamou / l'AROP — avec Benjamin d'Anfray au Palais Garnier",
     sidebar_voice:       "Voix",
@@ -153,7 +163,7 @@ const TRANSLATIONS = {
      ═══════════════════════════════════════════════ */
   pl: {
     nav_home:        "Strona główna",
-    nav_about:       "Biogram",
+    nav_about:       "Biografia",
     nav_events:      "Kalendarz",
     nav_recordings:  "Nagrania",
     nav_press:       "Prasa",
@@ -163,11 +173,16 @@ const TRANSLATIONS = {
 
     /* ── INDEX ── */
     hero_subtitle:   "Tenor",
-    hero_bio:        "Absolwent prestiżowego Programu Lindemanna w Metropolitan Opera, chwalony przez międzynarodową krytykę za technikę wokalną, grę aktorską i barwę głosu, występował z Wiener Philharmoniker, Orkiestrą Symfoniczną Radia Bawarskiego oraz Orkiestrą Opéra de Paris.",
-    next_label:      "Najbliższe spektakle",
+    hero_bio:        "Absolwent prestiżowego Programu Lindemanna w Metropolitan Opera, doceniany przez międzynarodowych krytyków za technikę wokalną, barwę głosu i grę aktorską, występuje regularnie na deskach najważniejszych teatrów europejskich — Staatsoper Berlin, Teatro Real de Madrid, Teatro Regio di Torino, Opéra national de Paris.",
+    next_label:      "Najbliższy występ",
 
     /* ── ABOUT ── */
-    about_page_title:    "Maciej Kwaśnikowski — Tenor",
+    title_home:        "Maciej Kwaśnikowski — Tenor",
+    title_about:       "Biografia — Maciej Kwaśnikowski, tenor",
+    title_events:      "Kalendarz — Maciej Kwaśnikowski, tenor",
+    title_recordings:  "Nagrania — Maciej Kwaśnikowski, tenor",
+    title_press:       "Prasa — Maciej Kwaśnikowski, tenor",
+    title_contact:     "Kontakt — Maciej Kwaśnikowski, tenor",
     about_hero_subtitle: "Tenor",
     photo_credit:        "© Julien Benhamou / l'AROP — z Benjaminem d'Anfray w Palais Garnier",
     sidebar_voice:       "Głos",
@@ -182,7 +197,7 @@ const TRANSLATIONS = {
     sidebar_studies_val: "Neila Shicoffa",
     sidebar_also:        "Ponadto",
     sidebar_degree:      "Inżynier fizyki technicznej<br>Politechnika Poznańska, 2017",
-    bio_intro: `„Jego naturalnie potężny i lekki głos w rejestrach środkowym i górnym pozwala mu z łatwością wypełniać przestrzeń błyskotliwą barwą."`,
+    bio_intro: `„Jego naturalnie mocny i lekko osadzony głos w średnicy i górze pozwala mu z łatwością zapanować nad przestrzenią olśniewającą barwą."`,
 
     bio_p1: "Polski tenor <strong>Maciej Kwaśnikowski</strong> urodził się w Poznaniu i zaczął śpiewać jako chłopiec-sopran w wieku 9 lat. Formalną naukę śpiewu rozpoczął u polskiego kontratenora <strong>Roberta Nakonecznego</strong> w 2014 roku, a w 2015 wstąpił do Akademii Operowej Teatru Wielkiego – Opery Narodowej, gdzie pracował z Izabelą Kłosińską, Eytanem Pessenem i Matthiasem Rexrothem.",
     bio_p2: "W 2017 roku, równolegle z kształceniem muzycznym, uzyskał tytuł inżyniera fizyki technicznej na Politechnice Poznańskiej. W tym samym roku śpiewał rolę Florville'a w <em>Il Signor Bruschino</em> Rossiniego z Orchestre national d'Île-de-France pod dyrekcją <strong>Enrique Mazzoli</strong> i wstąpił do Académie de l'Opéra national de Paris. Brał również udział w Young Singers Project Salzburger Festspiele oraz w Académie du Festival d'Aix-en-Provence.",
@@ -203,11 +218,11 @@ const TRANSLATIONS = {
     events_tba_dates: "Terminy do potwierdzenia",
     event_page_link: "Strona wydarzenia ↗",
     role_label:      "Rola",
-    concert_label:   "Partia tenorowa · Koncert",
+    concert_label:   "Tenor solo · Koncert",
 
     /* ── RECORDINGS ── */
     recordings_title:    "Nagrania",
-    recordings_subtitle: "Wybrane występy i recitale",
+    recordings_subtitle: "",
 
     /* ── PRESS ── */
     press_title:    "Prasa",
@@ -215,8 +230,8 @@ const TRANSLATIONS = {
 
     /* ── CONTACT ── */
     contact_title:        "Kontakt",
-    contact_subtitle:     "Angaże i zapytania",
-    contact_mgmt_label:   "Zarządzanie artystyczne",
-    contact_direct_label: "Kontakt bezpośredni",
+    contact_subtitle:     "",
+    contact_mgmt_label:   "Management",
+    contact_direct_label: "Bezpośredni kontakt",
   }
 };

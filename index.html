@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-title="about_page_title">
+<html lang="en" data-i18n-title="title_home">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 
   body {
     font-family: 'Jost', sans-serif;
-    background: #0e0e0e;
+    background: var(--bg);
     color: #f0ece4;
     min-height: 100vh;
     display: grid;
@@ -45,7 +45,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, transparent 70%, #0e0e0e);
+    background: linear-gradient(to right, transparent 70%, var(--bg));
   }
 
   .hero-text-dark {
@@ -53,7 +53,7 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: 4rem 3.5rem;
-    background: #0e0e0e;
+    background: var(--bg);
   }
 
   .hero-name-dark {
@@ -70,7 +70,7 @@
     font-size: 2rem;
     font-weight: 300;
     font-style: italic;
-    color: #c9b99a;
+    color: var(--gold);
     margin-bottom: 2.5rem;
   }
 
@@ -110,7 +110,7 @@
   }
 
   .next-event-title-dark a:hover {
-    color: #c9b99a;
+    color: var(--gold);
   }
 
   .next-event-detail-dark {
@@ -131,7 +131,7 @@
   <div class="hero-text-dark">
     <h1 class="hero-name-dark">Maciej<br>Kwaśnikowski</h1>
     <p class="hero-voice-dark" data-i18n="hero_subtitle">Tenor</p>
-    <p class="hero-bio-dark" data-i18n="hero_bio">Graduate of the prestigious Metropolitan Opera's  Lindemann Program, praised by international critics for his vocal technique, acting skills and timbre, he has performed with the Vienna Philharmonic, Bavarian Radio Symphony Orchestra, and the Orchestra of the Paris Opera.</p>
+    <p class="hero-bio-dark" data-i18n="hero_bio">A graduate of the Metropolitan Opera's prestigious Lindemann Program, praised by international critics for his vocal technique, timbre and stagecraft, he appears regularly on the stages of Europe's leading opera houses — the Staatsoper Berlin, Teatro Real de Madrid, Teatro Regio di Torino and the Opéra national de Paris.</p>
     <div class="next-event-dark">
       <p class="next-event-label-dark" data-i18n="next_label">Next performances</p>
       <p class="next-event-title-dark"><a href="events.html">Fragments pour une messe — St. Peter's Church · Riga, Latvia</a></p>

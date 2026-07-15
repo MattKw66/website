@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title="title_about">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 
   body {
     font-family: 'Jost', sans-serif;
-    background: #0e0e0e;
+    background: var(--bg);
     color: #f0ece4;
     min-height: 100vh;
     display: grid;
@@ -38,7 +38,7 @@
   .about-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, #0e0e0e 100%);
+    background: linear-gradient(to bottom, transparent 40%, var(--bg) 100%);
   }
 
   .about-hero-text {
@@ -59,7 +59,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2rem;
     font-style: italic;
-    color: #c9b99a;
+    color: var(--gold);
     margin-top: 0.3rem;
   }
 
@@ -120,7 +120,7 @@
 
   .sidebar-gold {
     font-size: 0.72rem;
-    color: #c9b99a;
+    color: var(--gold);
     letter-spacing: 0.04em;
     line-height: 2;
   }
@@ -135,7 +135,7 @@
     font-size: 1.55rem;
     font-weight: 300;
     line-height: 1.6;
-    color: #c9b99a;
+    color: var(--gold);
     margin-bottom: 2.5rem;
     font-style: italic;
   }

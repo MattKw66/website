@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title="title_events">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 
   body {
     font-family: 'Jost', sans-serif;
-    background: #0e0e0e;
+    background: var(--bg);
     color: #f0ece4;
     min-height: 100vh;
     display: grid;
@@ -70,7 +70,7 @@
   .year-line {
     flex: 1;
     height: 1px;
-    background: #2a2520;
+    background: var(--border);
   }
 
   /* SINGLE EVENT */
@@ -84,7 +84,7 @@
     transition: background 0.2s;
   }
 
-  .event:hover .event-opera { color: #c9b99a; }
+  .event:hover .event-opera { color: var(--gold); }
 
   /* DATE COLUMN */
   .event-date {
@@ -106,7 +106,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.9rem;
     font-weight: 300;
-    color: #c9b99a;
+    color: var(--gold);
     line-height: 1;
     margin: 0.1rem 0;
   }
@@ -121,7 +121,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #c9b99a;
+    color: var(--gold);
     margin-bottom: 0.4rem;
   }
 
@@ -181,7 +181,7 @@
   }
 
   .event-link:hover {
-    color: #c9b99a;
+    color: var(--gold);
     border-color: #c9b99a44;
   }
 

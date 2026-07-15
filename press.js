@@ -16,6 +16,10 @@
                            translation.
    author:                 Optional — omit the line if the review is unsigned.
    url:                    Link to the original article.
+   detail (production):    { en, fr, pl } — venue + date line under the role.
+                           Month names must be written per language (the dates
+                           here are plain text, not computed). A plain string
+                           still works and shows unchanged in all languages.
 
    ADDING A REVIEW
    ---------------
@@ -28,7 +32,7 @@ const PRODUCTIONS = [
   {
     opera:  "Roméo et Juliette — Charles Gounod",
     role:   "Tybalt",
-    detail: "Teatro Real, Madrid · May–Jun 2026",
+    detail: { en: "Teatro Real, Madrid · May–Jun 2026", fr: "Teatro Real, Madrid · mai–juin 2026", pl: "Teatro Real, Madrid · maj–czerwiec 2026" },
     reviews: [
       {
         quote: {
@@ -83,7 +87,7 @@ const PRODUCTIONS = [
   {
     opera:  "Julietta — Bohuslav Martinů",
     role:   "Michel",
-    detail: "Wrocław Opera · Apr–May 2026",
+    detail: { en: "Wrocław Opera · Apr–May 2026", fr: "Opéra de Wrocław · avril–mai 2026", pl: "Opera Wrocławska · kwiecień–maj 2026" },
     reviews: [
       {
         quote: {
@@ -111,7 +115,7 @@ const PRODUCTIONS = [
   {
     opera:  "Die Zauberflöte — W. A. Mozart",
     role:   "Tamino",
-    detail: "Opéra de Tours · Feb–Mar 2025",
+    detail: { en: "Opéra de Tours · Feb–Mar 2025", fr: "Opéra de Tours · février–mars 2025", pl: "Opera w Tours · luty–marzec 2025" },
     reviews: [
       {
         quote: {
@@ -142,7 +146,7 @@ const PRODUCTIONS = [
   {
     opera:  "Die Schöpfung — Joseph Haydn",
     role:   "Uriel",
-    detail: "Opéra de Montpellier · Nov 2024",
+    detail: { en: "Opéra de Montpellier · Nov 2024", fr: "Opéra de Montpellier · novembre 2024", pl: "Opera w Montpellier · listopad 2024" },
     reviews: [
       {
         quote: {
@@ -173,13 +177,13 @@ const PRODUCTIONS = [
   {
     opera:  "Roméo et Juliette — Charles Gounod",
     role:   "Tybalt",
-    detail: "Opéra Bastille · Jun–Jul 2023",
+    detail: { en: "Opéra Bastille · Jun–Jul 2023", fr: "Opéra Bastille · juin–juillet 2023", pl: "Opéra Bastille · czerwiec–lipiec 2023" },
     reviews: [
       {
         quote: {
           en: "Maciej Kwaśnikowski gives Tybalt his vibrant top notes (all the more so from the top of the great staircase), and deploys through his phrasing the placement of his middle register, on an intensity that suddenly rises — and never comes down again — with his anger, as soon as he recognises Roméo, the enemy of his family who dares to covet his cousin Juliette.",
           fr: "Maciej Kwaśnikowski offre à Tybalt son aigu vibrant (d'autant mieux du haut du grand escalier), et déploie avec son phrasé le placement de son médium, sur une intensité qui monte tout à coup - et ne redescend plus - avec sa colère, dès qu'il reconnaît Roméo, l'ennemi de sa famille qui ose convoiter sa cousine Juliette.",
-          pl: "Maciej Kwaśnikowski użycza Tybaltowi swojej wibrującej góry (tym bardziej ze szczytu wielkich schodów) i rozwija frazą osadzenie średnicy, budując intensywność, która nagle wzrasta – i już nie opada – wraz z jego gniewem, gdy tylko rozpoznaje Romea, wroga rodziny, który śmie pożądać jego kuzynki Julii.",
+          pl: "Maciej Kwaśnikowski użycza Tybaltowi swojego dźwięcznego wysokiego rejestru (tym bardziej ze szczytu wielkich schodów) i rozwija frazą osadzenie średnicy, budując intensywność, która nagle wzrasta – i już nie opada – wraz z jego gniewem, gdy tylko rozpoznaje Romea, wroga rodziny, który śmie pożądać jego kuzynki Julii.",
         },
         original: "Maciej Kwaśnikowski offre à Tybalt son aigu vibrant (d'autant mieux du haut du grand escalier), et déploie avec son phrasé le placement de son médium, sur une intensité qui monte tout à coup - et ne redescend plus - avec sa colère, dès qu'il reconnaît Roméo, l'ennemi de sa famille qui ose convoiter sa cousine Juliette.",
         author: "Charles Arden",
@@ -191,7 +195,7 @@ const PRODUCTIONS = [
         quote: {
           en: "Maciej Kwaśnikowski is an arrogant and unyielding Tybalt, his sonorous and well-projected voice hits the mark in the duel scene.",
           fr: "Maciej Kwaśnikowski est un Tybalt arrogant et inflexible, sa voix sonore et bien projetée fait mouche dans la scène du duel.",
-          pl: "Maciej Kwaśnikowski to Tybalt arogancki i nieustępliwy; jego dźwięczny, dobrze projektowany głos trafia w sedno w scenie pojedynku.",
+          pl: "Maciej Kwaśnikowski to Tybalt arogancki i nieustępliwy; jego dźwięczny, dobrze osadzony głos trafia w sedno w scenie pojedynku.",
         },
         original: "Maciej Kwaśnikowski est un Tybalt arrogant et inflexible, sa voix sonore et bien projetée fait mouche dans la scène du duel.",
         author: "Christian Peter",
@@ -215,7 +219,7 @@ const PRODUCTIONS = [
         quote: {
           en: "Vocally, the bar is set very high! The supporting roles stand out for their great consistency. Special mentions to the Gertrude of Sylvie Brunet-Grupposo and to the Tybalt of Maciej Kwaśnikowski — decidedly excellent, and to whom one would do well to entrust more important roles from now on.",
           fr: "Vocalement, la barre est placée très haut ! Les seconds rôles se distinguent par leur très grande homogénéité. Mentions spéciales à la Gertrude de Sylvie Brunet-Grupposo, au Tybalt de Maciej Kwaśnikowski, décidément excellent et à qui l'on ferait bien de confier dorénavant des rôles plus importants.",
-          pl: "Wokalnie poprzeczka zawieszona jest bardzo wysoko! Role drugoplanowe wyróżniają się dużą wyrównaniem obsady. Szczególne wyróżnienia dla Gertrudy Sylvie Brunet-Grupposo i Tybalta Macieja Kwaśnikowskiego – zdecydowanie znakomitego, któremu warto odtąd powierzać ważniejsze partie.",
+          pl: "Wokalnie poprzeczka zawieszona jest bardzo wysoko! [...]. Szczególne wyróżnienia dla [...] Tybalta Macieja Kwaśnikowskiego – zdecydowanie znakomitego, któremu warto odtąd powierzać ważniejsze partie.",
         },
         original: "Vocalement, la barre est placée très haut ! Les seconds rôles se distinguent par leur très grande homogénéité. Mentions spéciales à la Gertrude de Sylvie Brunet-Grupposo, au Tybalt de Maciej Kwaśnikowski, décidément excellent et à qui l'on ferait bien de confier dorénavant des rôles plus importants.",
         author: "Stéphane Lelièvre",
@@ -261,7 +265,7 @@ const PRODUCTIONS = [
   {
     opera:  "Tristan und Isolde — Richard Wagner",
     role:   "Young Sailor · Shepherd",
-    detail: "Opéra Bastille · Jan–Feb 2023",
+    detail: { en: "Opéra Bastille · Jan–Feb 2023", fr: "Opéra Bastille · janvier–février 2023", pl: "Opéra Bastille · styczeń–luty 2023" },
     reviews: [
       {
         quote: {
@@ -292,7 +296,7 @@ const PRODUCTIONS = [
   {
     opera:  "Così fan tutte — W. A. Mozart",
     role:   "Ferrando",
-    detail: "Dijon Opera · Feb 2022",
+    detail: { en: "Dijon Opera · Feb 2022", fr: "Opéra de Dijon · février 2022", pl: "Opera w Dijon · luty 2022" },
     reviews: [
       {
         quote: {
@@ -371,6 +375,12 @@ window.PRODUCTIONS = PRODUCTIONS;
     );
   }
 
+  function detailText(p, lang) {
+    const d = p.detail;
+    if (!d) return '';
+    return typeof d === 'string' ? d : (d[lang] || d[DEFAULT] || '');
+  }
+
   function productionHTML(p, lang) {
     return (
       '<div class="production">' +
@@ -379,18 +389,21 @@ window.PRODUCTIONS = PRODUCTIONS;
             '<span class="production-role">' +
               '<span data-i18n="role_label">Role</span>: ' + esc(p.role) +
             '</span>' +
-            '<span class="production-detail">' + esc(p.detail) + '</span>' +
+            '<span class="production-detail">' + esc(detailText(p, lang)) + '</span>' +
           '</div>' +
         '</div>' +
         '<h2 class="production-opera" style="margin-bottom:2rem;">' + esc(p.opera) + '</h2>' +
-        '<div class="reviews">' + p.reviews.map(r => reviewHTML(r, lang)).join('') + '</div>' +
+        '<div class="reviews' + (p.reviews.length === 1 ? ' single' : '') + '">' + p.reviews.map(r => reviewHTML(r, lang)).join('') + '</div>' +
       '</div>'
     );
   }
 
+  let renderedLang = null;
+
   function render(lang) {
     const container = document.querySelector('.press-container');
     if (!container) return;
+    renderedLang = lang;
     container.innerHTML = PRODUCTIONS.map(p => productionHTML(p, lang)).join('');
   }
 
@@ -399,6 +412,7 @@ window.PRODUCTIONS = PRODUCTIONS;
 
   /* re-render when the visitor switches language (event fired by lang.js) */
   document.addEventListener('mk:langchange', e => {
-    render((e.detail && e.detail.lang) || currentLang());
+    const l = (e.detail && e.detail.lang) || currentLang();
+    if (l !== renderedLang) render(l); // initial load fires this with the same lang — skip
   });
 })();
