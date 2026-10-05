@@ -29,6 +29,17 @@
 */
 
 const EVENTS = [
+{
+    type: 'concert',
+    opera: 'Fragments pour une messe',
+    composer: 'Eric Montalbetti',
+    venue: {
+      en: "Festival de La Chaise-Dieu",
+      fr: "Festival de La Chaise-Dieu",
+      pl: "Festival de La Chaise-Dieu",
+    },
+    dates: ['2026-08-20'],    
+  },
   {
     type: 'concert',
     opera: 'Fragments pour une messe',
@@ -41,20 +52,7 @@ const EVENTS = [
     link: 'https://koris.lv/en/events/29-ismf-poga-brahms-and-montalbetti/',
     dates: ['2026-09-04'],
   },
-  {
-    type: 'opera',
-    role: 'Michel',
-    opera: 'Julietta',
-    composer: 'Bohuslav Martinů',
-    venue: {
-      en: "Opera Wrocławska · Wrocław, Poland",
-      fr: "Opéra de Wrocław · Wrocław, Pologne",
-      pl: "Opera Wrocławska · Wrocław, Polska",
-    },
-    dates: [],
-    tba: true,
-    sortDate: '2026-10-01',   // October 2026 — exact dates TBA; keeps it before Salome
-  },
+
   {
     type: 'opera',
     role: 'Narraboth',
@@ -116,9 +114,8 @@ const EVENTS = [
       fr: "Opéra baltique · Gdańsk, Pologne",
       pl: "Opera Bałtycka · Gdańsk, Polska",
     },
-    dates: [],
-    tba: true,
-    sortDate: '2027-06-01',   // approximate — keeps it after Don Giovanni
+    link: 'https://operabaltycka.pl/wydarzenie/czarodziejski-flet/',
+    dates: ['2027-06-11', '2027-06-13', '2027-06-15'],
   },
 ];
 
