@@ -110,6 +110,18 @@ const EVENTS = [
     opera: 'Die Zauberflöte',
     composer: 'W. A. Mozart',
     venue: {
+      en: "Warsaw Chamber Opera",
+      fr: "Opéra de chambre de Varsovie",
+      pl: "Warszawska Opera Kameralna",
+    },
+    dates: ['2027-04-22', '2027-04-23'],
+  },
+  {
+    type: 'opera',
+    role: 'Tamino',
+    opera: 'Die Zauberflöte',
+    composer: 'W. A. Mozart',
+    venue: {
       en: "Opera Bałtycka · Gdańsk, Poland",
       fr: "Opéra baltique · Gdańsk, Pologne",
       pl: "Opera Bałtycka · Gdańsk, Polska",
